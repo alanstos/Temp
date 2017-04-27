@@ -1,0 +1,11 @@
+<html>
+
+<script>
+    var callbackFunction = function(data) {
+      console.log('recarregando...');
+        console.log(data);
+    };
+</script>
+
+<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where u='c' and woeid in (select woeid from geo.places(1) where text='(-22.912127,-43.229746)')&format=json&callback=callbackFunction"></script>
+</html>
